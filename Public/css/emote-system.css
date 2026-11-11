@@ -1,0 +1,113 @@
+/* Emote Toggle Button */
+#emoteBtn {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 150 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+#emoteBtn:hover { transform: scale(1.1); }
+#emoteBtn:active { transform: scale(0.95); }
+
+/* Emote Menu */
+#emoteMenu {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 150;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: 0.3s ease;
+}
+#emoteMenu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.emote-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: transform 0.2s;
+}
+.emote-item:hover { transform: scale(1.15); }
+
+/* Emote Notification Popup (Katulad ng Chat) */
+.emote-popup-container {
+  position: fixed;
+  top: 80px;
+  right: 20px; /* Nasa kanan para hindi mag-overlap sa chat na nasa gitna */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 500;
+  pointer-events: none;
+  max-width: 250px;
+}
+
+.emote-popup {
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  border-right: 4px solid var(--gold); /* Accent sa kanan */
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  animation: emoteSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+.emote-popup .popup-sender {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.emote-popup .popup-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.emote-popup.exit {
+  animation: emoteSlideOut 0.3s ease forwards;
+}
+
+@keyframes emoteSlideIn {
+  0% { opacity: 0; transform: translateX(30px) scale(0.9); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes emoteSlideOut {
+  0% { opacity: 1; transform: translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateX(30px) scale(0.9); }
+}

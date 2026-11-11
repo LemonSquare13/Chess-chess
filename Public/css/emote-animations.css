@@ -1,0 +1,25 @@
+/* Emote Floating Animation */
+.floating-emote {
+  position: absolute;
+  font-size: 4rem;
+  animation: popUpFloat 2.5s ease-out forwards;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
+}
+
+@keyframes popUpFloat {
+  0% { transform: scale(0) translateY(0); opacity: 0; }
+  15% { transform: scale(1.2) translateY(-20px); opacity: 1; }
+  30% { transform: scale(1) translateY(-40px); }
+  80% { transform: scale(1) translateY(-80px); opacity: 1; }
+  100% { transform: scale(0.8) translateY(-100px); opacity: 0; }
+}
+
+/* Ghost element habang dinadrag */
+.emote-drag-ghost {
+  position: fixed;
+  font-size: 4rem;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1.2);
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+}

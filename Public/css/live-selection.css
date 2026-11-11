@@ -1,0 +1,14 @@
+/* Blue outline for Live Selection */
+.square.live-select-w {
+  outline: 3px solid #3b82f6 !important; /* Blue */
+  outline-offset: -3px;
+  z-index: 5;
+  transition: outline 0.1s ease-in-out;
+}
+
+.square.live-select-b {
+  outline: 3px dashed #60a5fa !important; /* Lighter Blue for Black */
+  outline-offset: -3px;
+  z-index: 5;
+  transition: outline 0.1s ease-in-out;
+}
