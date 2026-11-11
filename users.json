@@ -1,0 +1,8 @@
+{
+  "admin": {
+    "password": "admin",
+    "color": "#d4af37",
+    "isLocked": false,
+    "masterKey": "admin"
+  }
+}
